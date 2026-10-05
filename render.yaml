@@ -1,17 +1,13 @@
-# Deploy only after choosing a plan and configuring secrets in your own Render account.
+# The user selected Render Free; configure the backend secret in Render before deployment.
 services:
   - type: web
     name: opengym-cloud
     runtime: docker
-    plan: starter
+    plan: free
     region: singapore
     dockerfilePath: ./Dockerfile
     autoDeployTrigger: off
     healthCheckPath: /api/health
-    disk:
-      name: opengym-media
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: SUPABASE_URL
         value: https://gqfurtopojqrokdhciqz.supabase.co
