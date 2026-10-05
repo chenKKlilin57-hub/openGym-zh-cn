@@ -1,0 +1,33 @@
+# Deploy only after choosing a plan and configuring secrets in your own Render account.
+services:
+  - type: web
+    name: opengym-cloud
+    runtime: docker
+    plan: starter
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    autoDeployTrigger: off
+    healthCheckPath: /api/health
+    disk:
+      name: opengym-media
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: SUPABASE_URL
+        value: https://gqfurtopojqrokdhciqz.supabase.co
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: SUPABASE_INSTANCE
+        value: main
+      - key: DATA_BACKEND
+        value: supabase
+      - key: COACH_DISABLED
+        value: "1"
+      - key: DEFAULT_LANG
+        value: zh-CN
+      - key: PASSWORD_LOGIN
+        value: "1"
+      - key: ALLOW_GUEST
+        value: "0"
+      - key: INVITE_ONLY
+        value: "0"
