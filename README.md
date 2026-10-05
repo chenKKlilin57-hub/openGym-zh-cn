@@ -6,7 +6,7 @@
 
 正式入口：**[要猛！](https://opengym-zh-cn.onrender.com/)**。公开仓库：[openGym-zh-cn](https://github.com/chenKKlilin57-hub/openGym-zh-cn)。网站在新加坡 Render Free 部署，支持密码登录、开放注册、默认简体中文。当前源码版本以此仓库最新提交和 Render 已部署提交为准。
 
-支持独立启用 DeepSeek 截图导入计划：用户上传截图、核对动作和训练数值，确认后追加计划。管理员需在服务器配置 `PLAN_IMPORT_ENABLED=1` 和 `DEEPSEEK_API_KEY`；默认关闭，原 AI Coach 继续关闭。每日账号与全站调用次数上限持久保存。详细说明与验证边界见解压后 `private/SCREENSHOT_IMPORT.md`。
+支持独立启用 DeepSeek 截图导入计划：用户上传截图、核对动作和训练数值，确认后追加计划。管理员需在服务器配置 `PLAN_IMPORT_ENABLED=1` 和 `DEEPSEEK_API_KEY`；功能默认关闭，原 AI Coach 继续关闭。启用后默认不设账号或全站每日识别额度；可选的正整数每日上限持久保存，登录认证、图片校验、短时请求限制、并发及超时继续生效。详细说明与验证边界见解压后 `private/SCREENSHOT_IMPORT.md`。
 
 Render Free 空闲时会休眠，再次访问需要等待唤醒；没有持久盘，自定义动作上传文件及媒体缓存会在休眠、重启或重新部署时丢失。账号、计划、训练记录、体重和设置继续保存在 Supabase，不依赖 Render 本地文件。秘密密钥只在 Render 后台环境变量中配置，不写入公开仓库、源码包或前端。
 
