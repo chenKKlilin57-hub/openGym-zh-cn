@@ -6,6 +6,8 @@
 
 正式入口：**[https://opengym-zh-cn.onrender.com/](https://opengym-zh-cn.onrender.com/)**。公开仓库：[openGym-zh-cn](https://github.com/chenKKlilin57-hub/openGym-zh-cn)。网站已在新加坡 Render Free 完成 Docker 构建并上线；上线代码提交为 `7de6e28505e0d9fd3d156c27d3f01c47b411e85f`。开放注册配置重启也已 Live，支持密码登录并默认简体中文。
 
+支持独立启用 DeepSeek 截图导入计划：用户上传截图、核对动作和训练数值，确认后追加计划。管理员需在服务器配置 `PLAN_IMPORT_ENABLED=1` 和 `DEEPSEEK_API_KEY`；默认关闭，原 AI Coach 继续关闭。每日账号与全站调用次数上限持久保存。详细说明与验证边界见解压后 `private/SCREENSHOT_IMPORT.md`。
+
 Render Free 空闲时会休眠，再次访问需要等待唤醒；没有持久盘，自定义动作上传文件及媒体缓存会在休眠、重启或重新部署时丢失。账号、计划、训练记录、体重和设置继续保存在 Supabase，不依赖 Render 本地文件。秘密密钥只在 Render 后台环境变量中配置，不写入公开仓库、源码包或前端。
 
 本机正式 `main` 服务已停止，演示 http://localhost:8082/ 使用独立的 `demo` 命名空间保留。同一 Supabase 命名空间不要并行运行多个 API 实例。回切本机必须先暂停 Render，然后在解压后的项目目录执行 `python3 private/cloud/local.py start`；查看状态用 `status`，停止用 `stop`。恢复云端前先停止本机 `main`。

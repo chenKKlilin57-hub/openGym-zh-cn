@@ -9,6 +9,7 @@ WORKDIR /src/frontend
 COPY --from=source /src/frontend/package.json /src/frontend/package-lock.json ./
 RUN npm ci --ignore-scripts
 COPY --from=source /src/api/coach/core /src/api/coach/core
+COPY --from=source /src/api/screenshot-import /src/api/screenshot-import
 COPY --from=source /src/frontend/ ./
 RUN APP_BUILD=zh-cn-cloud-preview npm run build
 
