@@ -4,7 +4,7 @@
 
 完整可修改源码在 [opengym-source.tar.gz](opengym-source.tar.gz)；解压后保留原目录、中文词条、Node API、Supabase 适配、构建和测试脚本。仓库根目录 Dockerfile 解压该快照后执行现有构建，不更换应用架构。
 
-正式入口：**https://opengym-zh-cn.onrender.com/**。公开仓库：[openGym-zh-cn](https://github.com/chenKKlilin57-hub/openGym-zh-cn)。网站已在新加坡 Render Free 完成 Docker 构建并上线；上线代码提交为 `7de6e28505e0d9fd3d156c27d3f01c47b411e85f`。开放注册配置重启也已 Live，支持密码登录并默认简体中文。
+正式入口：**[https://opengym-zh-cn.onrender.com/](https://opengym-zh-cn.onrender.com/)**。公开仓库：[openGym-zh-cn](https://github.com/chenKKlilin57-hub/openGym-zh-cn)。网站已在新加坡 Render Free 完成 Docker 构建并上线；上线代码提交为 `7de6e28505e0d9fd3d156c27d3f01c47b411e85f`。开放注册配置重启也已 Live，支持密码登录并默认简体中文。
 
 Render Free 空闲时会休眠，再次访问需要等待唤醒；没有持久盘，自定义动作上传文件及媒体缓存会在休眠、重启或重新部署时丢失。账号、计划、训练记录、体重和设置继续保存在 Supabase，不依赖 Render 本地文件。秘密密钥只在 Render 后台环境变量中配置，不写入公开仓库、源码包或前端。
 
