@@ -11,7 +11,7 @@ RUN npm ci --ignore-scripts
 COPY --from=source /src/api/coach/core /src/api/coach/core
 COPY --from=source /src/api/screenshot-import /src/api/screenshot-import
 COPY --from=source /src/frontend/ ./
-RUN APP_BUILD=zh-cn-cloud-preview npm run build
+RUN APP_BUILD=zh-cn-calendar-templates-20261027 npm run build
 
 FROM node:22-alpine
 RUN apk add --no-cache nginx bash git gettext ca-certificates && adduser -D -H -s /sbin/nologin coach
